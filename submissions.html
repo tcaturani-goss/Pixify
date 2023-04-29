@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pixify</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="./index.html"><h1>PIXIFY</h1></a>
+        <nav class="nav-menu" id="menuToggle">
+          <a href="./submissions.html">2023 Submissions</a>
+          <a href="./about-us.html">About</a>
+          <button class="theme-btn">Dark Mode</button>
+        </nav>
+        <p id="menu-icon">&#x2630;</p>
+      </div>
+    </header>
+    <body>
+      <main>
+        <div class="submissions-main-container">
+          <div class="submissions-content">
+            <div class="submission-grid-container">
+              <h2>2023 SUBMISSIONS</h2>
+              <div id="submissionsContainer"></div>
+            </div>
+            <div class="submit-form-container">
+              <h3>SUBMIT YOUR WORK</h3>
+              <form class="work-input-form">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  name="full-name"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Title of Your Entry"
+                  name="entry-title"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Image Url One"
+                  name="imageUrl"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Image Url Two"
+                  name="imageUrl"
+                />
+                <input
+                  type="text"
+                  placeholder="Image Url Three"
+                  name="imageUrl"
+                />
+                <input
+                  type="text"
+                  placeholder="Image Url Four"
+                  name="imageUrl"
+                />
+                <input
+                  type="text"
+                  placeholder="Image Url Five"
+                  name="imageUrl"
+                />
+                <button type="submit" class="submission-btn" id="submit-btn">
+                  SUBMIT
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+      <script src="script.js"></script>
+    </body>
+  </body>
+</html>
