@@ -98,14 +98,14 @@ window.onload = function() {
   
   
   function goNext() {
-      i++;
-      if(i >= currentImage.length){
-          i = 0;
+      if(i >= currentImage.length - 1) {
           imgSlider.src = currentImage[i];
+          i = 0;
       } else {
           imgSlider.src = currentImage[i];
           countText.innerHTML = `${i + 1} of ${currentImage.length}`
       }   
+      i++;
   }
   
   previousBtn.addEventListener("click", function () {
