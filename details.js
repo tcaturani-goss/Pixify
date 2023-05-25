@@ -56,13 +56,12 @@ let i = 0;
 window.onload = function() {
   const urlParams = new URLSearchParams(window.location.search);
   currentId = urlParams.get("id");
-
+  console.log(currentId);
   const currentSubmission = imageSets.filter(item => item.id == currentId);
+  console.log(currentSubmission)
   console.log(currentSubmission[0]);
   
   let currentImage = currentSubmission[0].images;
-  const previousBtn = document.querySelector("#prev-btn");
-  const nextBtn = document.querySelector("#next-btn");
 
   const submission = `<div class="details-container">
   <h2>${currentSubmission[0].title}</h2>
@@ -72,7 +71,7 @@ window.onload = function() {
     alt=${currentSubmission[0].title}
     class="details-img"
   />
-  <p>${currentId} of 5</p>
+  <p id="count-text">1 of 5</p>
   <nav class="details-btn-nav">
     <button class="details-btn" id="prev-btn">Previous</button>
     <button class="details-btn" id="next-btn">Next</button>
@@ -81,16 +80,20 @@ window.onload = function() {
 
   const submissionsContainer = document.querySelector("main");
   submissionsContainer.innerHTML = submission;
+  const previousBtn = document.querySelector("#prev-btn");
+  const nextBtn = document.querySelector("#next-btn");
+  let imgSlider = document.querySelector(".details-img");
+  const countText = document.getElementById("count-text");
+ 
   //IMAGE SLIDER PREVIOUS/NEXT BUTTONS
-      
   function goPrevious() {
-      i--;
-      if(i < 0){
-          i = currentImage.length - 1;
-          imgSlider.src = currentImage[i];
+    if(i > 0){
+        i--;
       } else {
-          imgSlider.src = currentImage[i];
+        i = currentImage.length - 1;
       }
+      imgSlider.src = currentImage[i];
+      countText.innerHTML = `${i + 1} of ${currentImage.length}`
   }
   
   
@@ -101,11 +104,16 @@ window.onload = function() {
           imgSlider.src = currentImage[i];
       } else {
           imgSlider.src = currentImage[i];
+          countText.innerHTML = `${i + 1} of ${currentImage.length}`
       }   
   }
   
-  previousBtn.addEventListener("click", goPrevious());
-  nextBtn.addEventListener("click", goNext());
+  previousBtn.addEventListener("click", function () {
+    goPrevious()
+  });
+  nextBtn.addEventListener("click", function () {
+    goNext()
+  });
 
 }
 
