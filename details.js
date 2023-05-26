@@ -96,17 +96,18 @@ window.onload = function() {
       countText.innerHTML = `${i + 1} of ${currentImage.length}`
   }
   
-  
+  /* Incorrect Function */
   function goNext() {
-      if(i >= currentImage.length - 1) {
-          imgSlider.src = currentImage[i];
-          i = 0;
-      } else {
-          imgSlider.src = currentImage[i];
-          countText.innerHTML = `${i + 1} of ${currentImage.length}`
-      }   
       i++;
+      if(i >= currentImage.length) {
+          i = 0;
+      }
+      imgSlider.src = currentImage[i];
+      countText.innerHTML = `${i + 1} of ${currentImage.length}`  
   }
+
+  /* Correct Function*/
+ 
   
   previousBtn.addEventListener("click", function () {
     goPrevious()
